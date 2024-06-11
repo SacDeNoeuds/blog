@@ -3,7 +3,7 @@ author: SacDeNoeuds
 pubDatetime: 2024-06-11T06:42:40.000+02:00
 modDatetime:
 title: The Shortest and Most Aggressive CSS Reset
-featured: true
+featured: false
 draft: false
 tags:
   - CSS

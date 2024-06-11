@@ -3,7 +3,7 @@ author: SacDeNoeuds
 pubDatetime: 2024-06-11T08:10:27.000+02:00
 modDatetime:
 title: How To Print A Part Of Your Page
-featured: true
+featured: false
 draft: false
 tags:
   - CSS
