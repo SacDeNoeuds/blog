@@ -2,11 +2,13 @@
 author: SacDeNoeuds
 pubDatetime: 2024-06-11T08:10:27.000+02:00
 modDatetime:
-title: How To Print A Part Of Your Page
+title: How To Print A Single Element
 featured: false
 draft: false
 tags:
   - CSS
+  - HTML
+  - TS/JS
   - TIL
 description: It fits in a 10-lines stylesheet
 ---

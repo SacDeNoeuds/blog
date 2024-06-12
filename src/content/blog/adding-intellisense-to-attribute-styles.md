@@ -54,7 +54,7 @@ export type Rounded =
 
 ## TSX – React, Solid, …
 
-I haven’t all the tools of course, there’s just too many of them using TSX.
+I haven’t checked all the tools of course, there’s just too many of them using TSX.
 
 <details>
 <summary>If it doesn’t work with your tool, follow this methodology</summary>
@@ -101,9 +101,7 @@ declare global {
 
 ## VSCode HTML language features
 
-I haven’t checked that one yet, just I read the doc. Here’s my [perplexity.ai](https://www.perplexity.ai/search/How-does-vscode-PqtKYtRGRSOKKh0z4Lx64Q) search about it.
-
-Here’s what it says:
+I haven’t checked that one yet, just I read the doc. Here’s my [perplexity.ai](https://www.perplexity.ai/search/How-does-vscode-PqtKYtRGRSOKKh0z4Lx64Q) search about it, and here’s what it says:
 
 You can declare a `custom-attributes.html-data.json` file.
 

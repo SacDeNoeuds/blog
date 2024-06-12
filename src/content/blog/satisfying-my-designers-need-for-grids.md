@@ -21,7 +21,8 @@ And because it’s too easy, our fellow designers like complicating things by in
 - 4 columns on mobile
 - 8 columns on tablet
 - 12 columns on desktop
-  And usually they don’t acknowledge wider screens like TVs or developers’ monitors 😅 (but don’t tell them plz).
+
+And usually they don’t acknowledge wider screens like TVs or developers’ monitors 😅 (but don’t tell them plz).
 
 ## Gimme the CSS already!! – First Batch
 
@@ -113,7 +114,7 @@ There is a way to specify the column size for mobile and change it _only_ for wi
 
 ## You can even go attribute-based
 
-I :love: attribute-based style for their expressiveness – imo it’s like classes with options. The best thing is that you can [add intellisense yourself](../adding-intellisense-to-attribute-styles/)!
+I ❤️ attribute-based style for their expressiveness – imo it’s like classes with options. The best thing is that you can [add intellisense yourself](../adding-intellisense-to-attribute-styles/)!
 
 <!-- prettier-ignore -->
 ```html

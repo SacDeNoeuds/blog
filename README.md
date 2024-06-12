@@ -4,7 +4,7 @@ Here I intend to add one-by-one my today-I-learned and discoveries in the shape 
 
 That's one of the 2 reasons why I write posts – here and there –, the second reason being sharing knowledge.
 
-Built With AstroPaper: a minimal, responsive, accessible and SEO-friendly Astro blog theme. This theme is designed and crafted based on [my personal blog](https://satnaing.dev/blog).
+Built With AstroPaper: a minimal, responsive, accessible and SEO-friendly Astro blog theme.
 Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contributors](https://github.com/satnaing/astro-paper/graphs/contributors).
 Mail to drop thanks to: [satnaing's email](mailto:contact@satnaing.dev)
 
