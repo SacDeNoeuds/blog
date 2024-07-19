@@ -1,14 +1,14 @@
 ---
-import { getCollection } from "astro:content";
-import Layout from "@layouts/Layout.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import LinkButton from "@components/LinkButton.astro";
-import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import Hr from "@components/Hr.astro";
+import LinkButton from "@components/LinkButton.astro";
 import Socials from "@components/Socials.astro";
-import getSortedPosts from "@utils/getSortedPosts";
 import { SOCIALS } from "@config";
+import Layout from "@layouts/Layout.astro";
+import getSortedPosts from "@utils/getSortedPosts";
+import { getCollection } from "astro:content";
 
 const posts = await getCollection("blog");
 
@@ -77,7 +77,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
             <ul>
               {featuredPosts.map(({ data, slug }) => (
                 <Card
-                  href={`/posts/${slug}/`}
+                  href={`/blog/posts/${slug}/`}
                   frontmatter={data}
                   secHeading={false}
                 />
@@ -98,7 +98,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
               ({ data, slug }, index) =>
                 index < 4 && (
                   <Card
-                    href={`/posts/${slug}/`}
+                    href={`/blog/posts/${slug}/`}
                     frontmatter={data}
                     secHeading={false}
                   />
@@ -110,7 +110,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     }
 
     <div class="all-posts-btn-wrapper">
-      <LinkButton href="/posts/">
+      <LinkButton href="/blog/posts/">
         All Posts
         <svg xmlns="http://www.w3.org/2000/svg"
           ><path
