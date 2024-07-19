@@ -28,15 +28,16 @@ I’ve read that exact attribute selectors `[attr="value"]` are approximately as
 
 <!-- prettier-ignore -->
 ```html
-<div rounded />
-<div rounded="thin" />
-<div rounded="block-end" />
-<div rounded="thick block-end" />
+<div is-rounded />
+<div is-rounded="thin" />
+<div is-rounded="block-end" />
+<div is-rounded="thick block-end" />
 <style>
-  [rounded] {}
-  [rounded^="thin"] {}
-  [rounded^="thick"] {}
-  [rounded$="block-end"] {}
+  /* utility.css */
+  [is-rounded] {}
+  [is-rounded^="thin"] {}
+  [is-rounded^="thick"] {}
+  [is-rounded$="block-end"] {}
 </style>
 ```
 
@@ -67,14 +68,23 @@ I haven’t checked all the tools of course, there’s just too many of them usi
 </details>
 
 ```ts
-// in your entry point, mine is src/main.tsx
-declare global {
-  namespace JSX {
-    interface IntrinsicAttributes {
-      rounded?: Rounded;
+// utility.d.ts
+
+// That way if the file is imported in the code, everything gets intellisense !
+declare module "utility.css" {
+  declare global {
+    namespace JSX {
+      interface IntrinsicAttributes {
+        "is-rounded"?: Rounded;
+      }
     }
   }
 }
+```
+
+```tsx
+// in your entry point, mine is src/main.tsx
+import "utility.css";
 ```
 
 ## For Svelte
@@ -91,7 +101,7 @@ const component = new AppComponent({
 declare global {
   namespace svelteHTML {
     interface HTMLAttributes {
-      rounded?: Rounded
+      'is-rounded'?: Rounded
     }
   }
 }
