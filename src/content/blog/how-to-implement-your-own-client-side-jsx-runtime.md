@@ -63,7 +63,6 @@ export function createElement<Tag extends TagName>(
 }
 
 function isEventHandler(key: string, value: unknown): value is AnyFunction {
-  // NOTE: no native attributes starts with `on_`, therefore no conflict.
   return isFunction(value) && key.startsWith("on");
 }
 
@@ -105,7 +104,7 @@ function childToNode(child: Child): Node {
   if (typeof child === "string") return document.createTextNode(child);
 
   const error = new Error("unhandled child type");
-  error.cause = child;
+  Object.assign(error, { cause: child });
   throw error;
 }
 ```
@@ -129,8 +128,8 @@ So let’s do it:
 type Reactive<T> = { get: () => T }
 
 // Update the children type
-type PrimitiveChild = string | number | …
-type Child = PrimitiveChild | Reactive<Child> // Reactive children may be nested !
+type Child = string | number | …
+type Children = Array<Child | Reactive<Child>>
 
 // Update the attributes type
 type HTMLElements = {
@@ -143,7 +142,7 @@ type HTMLElements = {
 export function createElement<Tag extends TagName>(
   tag: Tag,
   props: HTMLElement[Tag],
-  children: Children // string | number | …, only static stuff.
+  children: Children
 ) {
   const element = document.createElement(tag);
   renderChildren(element, children);
@@ -188,7 +187,7 @@ function renderChildren(element: Element, children: Children) {
   })
 }
 
-function renderReactiveChild(element: Element, child: Reactive<Child>) {
+function renderReactiveChild(element: Element, signal: Reactive<Child>) {
   // TODO: avoid running effect when the element
   // is disconnected from the dom.
 
@@ -199,9 +198,9 @@ function renderReactiveChild(element: Element, child: Reactive<Child>) {
   // keep a previousNode reference to handle updates and removal of child lists.
   let previousNode: Node[];
   effect(() => {
-    const child = child.get()
+    const child = signal.get()
     const children = Array.isArray(child) ? child : [child]
-    const nodes = asList.flat(2).flatMap(childToNodes)
+    const nodes = asList.map(childToNode)
 
     // "anchor" because the node I’ll take as reference to know where
     // to append/replace old nodes by new nodes.
@@ -256,4 +255,4 @@ Obviously, you may encounter some edge-cases, I personally use my implementation
 So far so good, I enjoyed the journey and hope you did too.
 Enjoy your handcrafted < 2kb jsx runtime 🤗
 
-PS: Here’s the full version of my home-made ~jam~ implementation, all in a [CodeSandbox](https://codesandbox.io/p/github/SacDeNoeuds/client-side-jsx-demo/main?import=true&workspaceId=4ede00d8-090d-4142-8ec8-cedea34a9ce2).
+PS: Here’s the full version of my home-made ~jam~ implementation, all in a [CodeSandbox](https://codesandbox.io/p/github/SacDeNoeuds/client-side-jsx-demo/main?import=true&workspaceId=4ede00d8-090d-4142-8ec8-cedea34a9ce2) ❤️.
