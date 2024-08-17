@@ -10,7 +10,7 @@ tags:
 description: A look at how to use `jsxImportSource` TS compiler option
 ---
 
-I like crafting my own stuff. And I knew one could provide their own `jsxImportSource` in the TypeScript compiler option. I figured how to make it point to a local implementation.
+I like crafting my own stuff. And I knew one could provide their own `jsxImportSource` in the TypeScript compiler option. Now I figured how to make it point to a local implementation.
 
 ## Project structure
 
@@ -45,7 +45,7 @@ root/
 
 ## How it works
 
-The `jsxImportSource` expects a folder containing `jsx` folder with at least those files:
+The `jsxImportSource` expects a folder containing at least those files:
 
 - jsx-runtime.ts exporting functions `jsx` and `jsxs`
 - jsx-dev-runtime.ts exporting function `jsxDEV`
