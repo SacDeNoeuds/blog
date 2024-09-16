@@ -255,4 +255,4 @@ Obviously, you may encounter some edge-cases, I personally use my implementation
 So far so good, I enjoyed the journey and hope you did too.
 Enjoy your handcrafted < 2kb jsx runtime 🤗
 
-PS: Here’s the full version of my home-made ~jam~ implementation, all in a [CodeSandbox](https://codesandbox.io/p/github/SacDeNoeuds/client-side-jsx-demo/main?import=true&workspaceId=4ede00d8-090d-4142-8ec8-cedea34a9ce2) ❤️.
+PS: Here’s the full version of my home-made ~jam~ implementation, all in a [CodeSandbox](https://codesandbox.io/p/github/SacDeNoeuds/client-side-jsx-demo/main?import=true) ❤️.

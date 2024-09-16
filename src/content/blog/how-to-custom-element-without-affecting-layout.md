@@ -9,7 +9,7 @@ tags:
   - HTML
   - CSS
   - TIL
-description: "TL;DR – use `display: contents`".
+description: TL;DR – use `display: contents`
 ---
 
 Let’s say you have an `counter-button` elements like:
