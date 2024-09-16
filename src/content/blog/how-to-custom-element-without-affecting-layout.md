@@ -1,15 +1,15 @@
 ---
 author: SacDeNoeuds
 pubDatetime: 2024-09-14T07:46:54.000+02:00
-modDatetime: 
+modDatetime:
 title: How to Custom Element without affecting layout
 featured: false
 draft: false
-tags: 
+tags:
   - HTML
   - CSS
   - TIL
-description: TL;DR – use `display: contents`
+description: "TL\\;DR – use `display: contents`"
 ---
 
 Let’s say you have an `counter-button` elements like:
